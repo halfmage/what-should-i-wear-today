@@ -30,7 +30,7 @@ exports.handler = async function(event, context) {
       };
     }
     
-    const API_KEY = process.env.OPENWEATHER_API_KEY;
+    const API_KEY = process.env.WEATHER_API_KEY;
     const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}`;
     
     const response = await axios.get(url);
