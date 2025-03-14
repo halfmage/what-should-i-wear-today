@@ -1,19 +1,17 @@
 {
-  "name": "what-to-wear-app",
+  "name": "what-should-i-wear-today",
   "version": "1.0.0",
-  "description": "A simple web app to help users decide what to wear based on weather and preferences",
-  "main": "server.js",
+  "description": "A weather-based clothing recommendation app",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "install-deps": "npm install"
+    "start": "netlify dev"
   },
   "dependencies": {
+    "axios": "^1.6.0",
     "dotenv": "^16.3.1",
-    "ws": "^8.13.0"
+    "openai": "^3.3.0"
   },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "author": "",
-  "license": "MIT"
+  "devDependencies": {
+    "netlify-cli": "^15.11.0"
+  }
 } 

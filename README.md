@@ -1,40 +1,93 @@
 # What Should I Wear Today?
 
-A simple web application that helps users decide what to wear based on current weather conditions and personal preferences.
+A weather-based clothing recommendation app that suggests outfits based on current weather conditions and personal preferences.
 
 ## Features
 
-- Weather data integration using OpenWeatherMap API
-- Location auto-detection or manual input
-- Customizable preferences:
-  - Temperature sensitivity
-  - Clothing style preference
-  - Climate adaptation
-- AI-powered clothing recommendations using OpenAI API
-- Live reload for development
+- Real-time weather data from OpenWeatherMap
+- AI-powered clothing recommendations from OpenAI
+- Preference settings for clothing style, temperature sensitivity, and more
+- Multiple language support (English, German, Belarusian)
+- History of previous recommendations
+- Mobile-friendly responsive design
 
-## Setup and Installation
+## Deploying to Netlify
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd what-to-wear-app
-   ```
+### Prerequisites
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+- [Node.js](https://nodejs.org/) installed (v14 or higher)
+- [Git](https://git-scm.com/) installed
+- [Netlify CLI](https://docs.netlify.com/cli/get-started/) (optional for local testing)
+- API keys for:
+  - [OpenWeatherMap](https://openweathermap.org/api)
+  - [OpenAI](https://platform.openai.com/)
 
-3. Run the application:
-   ```
-   npm start
-   ```
+### Deployment Steps
 
-4. Open your browser and navigate to:
-   ```
-   http://localhost:8080
-   ```
+1. **Clone the repository**
+
+```bash
+git clone <your-repository-url>
+cd what-should-i-wear-today
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up environment variables**
+
+Create a `.env.local` file for local development:
+
+```
+OPENWEATHER_API_KEY=your_openweathermap_api_key
+OPENAI_API_KEY=your_openai_api_key
+```
+
+4. **Test locally with Netlify Dev** (optional)
+
+```bash
+npm install -g netlify-cli
+netlify dev
+```
+
+5. **Deploy to Netlify**
+
+Option 1: Using the Netlify CLI:
+```bash
+netlify deploy --prod
+```
+
+Option 2: Connect to Git repository:
+   - Go to [Netlify](https://app.netlify.com/)
+   - Click "New site from Git"
+   - Select your Git provider
+   - Select your repository
+   - Configure build settings (leave build command blank)
+   - Click "Deploy site"
+
+6. **Set up environment variables in Netlify**
+   - Go to your site's dashboard on Netlify
+   - Click "Site settings" → "Environment variables"
+   - Add the following variables:
+     - OPENWEATHER_API_KEY
+     - OPENAI_API_KEY
+
+7. **Deploy functions**
+   - Your Netlify functions will be automatically deployed from the `netlify/functions` directory
+
+## Local Development
+
+For local development, you can use Netlify CLI to test your functions:
+
+```bash
+npm install -g netlify-cli
+netlify dev
+```
+
+This will start a local development server that simulates the Netlify environment.
 
 ## API Keys
 
