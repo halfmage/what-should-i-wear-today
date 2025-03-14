@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#3498db">
+    <title>What Should I Wear Today?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>What Should I Wear Today?</h1>
+            <select id="language-selector" class="language-selector" aria-label="Select language"></select>
+        </div>
+        
+        <div class="slogan">
+            <p>Weather-wise, wardrobe-wise. Dress smart for every forecast!</p>
+        </div>
+
+        <div class="card result-card" id="result-container" style="display: none;">
+            <div id="recommendation" class="recommendation-container"></div>
+            <div id="weather-info" class="weather-container"></div>
+        </div>
+
+        <div class="card">
+            <form id="clothing-form">
+                <div class="form-group">
+                    <label for="location" data-i18n="locationLabel">Location</label>
+                    <div class="location-inputs">
+                        <input type="text" id="location" data-i18n-placeholder="locationPlaceholder" placeholder="Enter city name...">
+                        <button type="button" id="detect-location" class="locate-btn" data-i18n="locateBtn">📍 Locate</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="clothingStyleLabel">Clothing Style</label>
+                    <div class="button-group" id="clothing-style-group">
+                        <button type="button" class="option-button selected" data-value="casual">
+                            <span class="emoji">👕</span>
+                            <span class="text" data-i18n="casual">Casual</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="business">
+                            <span class="emoji">👔</span>
+                            <span class="text" data-i18n="business">Business</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="sporty">
+                            <span class="emoji">🏋️</span>
+                            <span class="text" data-i18n="sporty">Sporty</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="home-office">
+                            <span class="emoji">🏠</span>
+                            <span class="text" data-i18n="homeOffice">Home Office</span>
+                        </button>
+                    </div>
+                    <input type="hidden" name="clothing-style" value="casual">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="temperatureSensitivityLabel">Temperature Sensitivity</label>
+                    <div class="button-group" id="temp-sensitivity-group">
+                        <button type="button" class="option-button selected" data-value="cold-sensitive">
+                            <span class="emoji">❄️</span>
+                            <span class="text" data-i18n="coldSensitive">Cold-sensitive</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="balanced">
+                            <span class="emoji">⚖️</span>
+                            <span class="text" data-i18n="averageSensitivity">Balanced</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="heat-sensitive">
+                            <span class="emoji">🔥</span>
+                            <span class="text" data-i18n="heatSensitive">Heat-sensitive</span>
+                        </button>
+                    </div>
+                    <input type="hidden" name="temp-sensitivity" value="cold-sensitive">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="climateAdaptationLabel">Climate Adaptation</label>
+                    <div class="button-group" id="climate-adaptation-group">
+                        <button type="button" class="option-button" data-value="cold-adapted">
+                            <span class="emoji">🧊</span>
+                            <span class="text" data-i18n="localClimate">Local</span>
+                        </button>
+                        <button type="button" class="option-button selected" data-value="balanced">
+                            <span class="emoji">🌤️</span>
+                            <span class="text" data-i18n="averageSensitivity">Balanced</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="heat-adapted">
+                            <span class="emoji">☀️</span>
+                            <span class="text" data-i18n="visitor">Visitor</span>
+                        </button>
+                    </div>
+                    <input type="hidden" name="climate-adaptation" value="balanced">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="movementLevelLabel">Movement Level at Home</label>
+                    <div class="button-group" id="movement-level-group">
+                        <button type="button" class="option-button selected" data-value="sedentary">
+                            <span class="emoji">🪑</span>
+                            <span class="text" data-i18n="sedentary">Sedentary</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="occasional">
+                            <span class="emoji">🚶</span>
+                            <span class="text" data-i18n="moderate">Moderate</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="active">
+                            <span class="emoji">🏃</span>
+                            <span class="text" data-i18n="active">Active</span>
+                        </button>
+                    </div>
+                    <input type="hidden" name="movement-level" value="sedentary">
+                </div>
+
+                <button type="submit" class="btn-primary" data-i18n="submitBtn">Get Recommendation</button>
+            </form>
+        </div>
+
+        <div class="card history-card" id="history-container" style="display: none;">
+            <h2><span data-i18n="previousRecommendations">Previous Recommendations</span> <button id="clear-history" class="small-btn" data-i18n="clearHistoryBtn">Clear All</button></h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

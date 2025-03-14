@@ -1,0 +1,19 @@
+{
+  "name": "what-to-wear-app",
+  "version": "1.0.0",
+  "description": "A simple web app to help users decide what to wear based on weather and preferences",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ws": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+} 

@@ -1,0 +1,462 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+.slogan {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+input[type="text"], 
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 48px; /* Larger touch target */
+}
+
+.location-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.location-inputs input {
+    flex: 1;
+}
+
+.locate-btn {
+    white-space: nowrap;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    background-color: #fff;
+    border-color: #ddd;
+    color: #333;
+}
+
+.locate-btn:hover, .locate-btn:active {
+    background-color: #eee;
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.option-button {
+    flex: 1;
+    min-width: 80px;
+    height: 64px;
+    padding: 10px 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.option-button .emoji {
+    font-size: 1.4rem;
+    margin-bottom: 1px;
+    display: block;
+}
+
+.option-button .text {
+    display: block;
+    line-height: 1.2;
+}
+
+.option-button.selected {
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+    outline: 1px solid #000;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+.option-button:hover {
+    background-color: #e9ecef;
+}
+
+.option-button:active {
+    transform: translateY(1px);
+}
+
+/* Old radio-group styles kept for reference, can be removed */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.radio-group input {
+    margin-right: 8px;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 50px; /* Larger touch target */
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: #2980b9;
+}
+
+button {
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    height: 48px; /* Larger touch target */
+}
+
+button:hover, button:active {
+    background-color: #e9ecef;
+}
+
+.result-card {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid #000;
+}
+
+.recommendation-container {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    padding: 10px 0 25px;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 500;
+}
+
+.weather-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.weather-container h2 {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: #2c3e50;
+}
+
+.weather-container p {
+    margin: 2px 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+    
+    .emoji-header {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .option-button {
+        height: 60px;
+        min-width: 70px;
+    }
+    
+    .option-button .emoji {
+        font-size: 1.3rem;
+        margin-bottom: 3px;
+    }
+    
+    .option-button .text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .location-inputs {
+        gap: 8px;
+    }
+    
+    .locate-btn {
+        min-width: auto;
+        padding: 0 15px;
+    }
+    
+    .option-button {
+        height: 58px;
+        min-width: 60px;
+        padding: 5px;
+    }
+    
+    .option-button .emoji {
+        font-size: 1.2rem;
+        margin-bottom: 3px;
+    }
+    
+    .option-button .text {
+        font-size: 0.75rem;
+    }
+    
+    #clothing-style-group .option-button {
+        min-width: 50px;
+    }
+    
+    .weather-container {
+        text-align: left;
+    }
+    
+    .weather-container div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .weather-container div:last-child {
+        text-align: center;
+    }
+    
+    .history-list-item {
+        padding: 10px;
+    }
+    
+    .history-list-item .history-details {
+        margin-top: 5px;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) {
+    .btn-primary, button, input[type="text"], select, .option-button {
+        cursor: default;
+    }
+    
+    select {
+        background-size: 12px;
+        padding-right: 30px;
+    }
+    
+    .option-button:active {
+        background-color: #e1f0fa;
+    }
+}
+
+/* History section styles */
+.history-card h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.small-btn {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    height: auto;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.history-list-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.history-list-item:last-child {
+    border-bottom: none;
+}
+
+.history-list-item:hover {
+    background-color: #f8f9fa;
+}
+
+.history-list-item .history-date {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.history-list-item .history-location {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.history-list-item .history-recommendation {
+    color: #2c3e50;
+}
+
+.history-list-item .history-details {
+    display: flex;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.history-list-item .history-tag {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 15px;
+    color: #666;
+}
+
+/* Header layout */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.header-container h1 {
+    margin: 0;
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Language selector */
+.language-selector {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    max-width: 130px;
+    height: auto;
+    appearance: menulist;
+    -webkit-appearance: menulist;
+}
+
+.language-selector:focus {
+    outline: 1px solid #3498db;
+    border-color: #3498db;
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .header-container h1 {
+        margin-bottom: 10px;
+    }
+    
+    .language-selector {
+        margin-bottom: 10px;
+    }
+    
+    /* ... rest of existing mobile styles ... */
+} 
